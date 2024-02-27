@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 // mount the session middleware
 app.use(session({
-  secret: process.env.SECRET,
+  secret: process.env.GOOGLE_SECRET,
   resave: false,
   saveUninitialized: true
 }));
