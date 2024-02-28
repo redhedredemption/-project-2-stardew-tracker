@@ -18,7 +18,7 @@ passport.use(new GoogleStrategy({
     
     try {
       user = await UserModel.create({
-        name profile.displayName,
+        name: profile.displayName,
         googleId: profile.id,
         email: profile.emails[0].value,
         avatar: profile.photos[0].value
@@ -34,7 +34,7 @@ passport.serializeUser(function(user, cb) {
   cb(null, user._id)
 });
 
-passport.deserializeUser(function(id, cb) {
+passport.deserializeUser(async function(id, cb) {
   try{
     const userDoc = await UserModel.findById(userId)
     cb(null, userDoc); // this line attaches the userDoc to req.user

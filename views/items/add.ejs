@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+<p>Hot chicken photo booth ascot tumeric four loko bushwick.
+	<select>
+		<% items.forEach(function(i) { %>
+			<option>
+				<%= i.name %> <%= i.collected %> <%= i.deposited %> 
+                <!-- <%= i.bundle %>  -->
+			</option>
+			<% }) %>
+	</select>
+</p>
+<form id="add-item-form" action="/items" method="POST">
+	<label>Item Name:</label>
+	<input type="text" name="name">
+  <label>Collected?</label>
+  <input type="checkbox" name="collected">
+  <label>Deposited?</label>
+  <input type="checkbox" name="deposited">
+  <!-- <label>Bundle Name</label>
+  <select name="bundle">
+    <option value="Spring Foraging">springForaging</option>
+    <option value="Summer Foraging">summerForaging</option>
+    <option value="Fall Foraging">fallForage</option>
+    <option value="Winter Foraging">winterForage</option>
+    <option value="Construction">construction</option>
+    <option value="Exotic Foraging">exoticForaging</option>
+    <option value="Fall Foraging">Fall Foraging</option>
+    <option value="Fall Foraging">Fall Foraging</option> -->
+  </select>
+	<input type="submit" value="Add Item">
+</form>

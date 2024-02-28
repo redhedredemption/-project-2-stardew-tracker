@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const indexRoutes = require('./routes/index');
+const indexRouter = require('./routes/index');
 
 const bundlesRouter = require("./routes/bundles");
 const commentsRouter = require("./routes/comments");
@@ -55,14 +55,13 @@ app.use(function (req, res, next) {
 
 // Stardew Routers
 app.use("/", indexRouter);
-app.use("/bundles", bundlesRouter);
+// app.use("/bundles", bundlesRouter);
 
 //Stardew Comment Routers
-app.use("/", commentsRouter);
-app.use("/", itemsRouter);
+// app.use("/", commentsRouter);
+// app.use("/", itemsRouter);
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
 app.use(function(req, res, next) {
   next(createError(404)) 
 });
