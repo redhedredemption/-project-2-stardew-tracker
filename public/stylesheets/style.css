@@ -18,3 +18,17 @@
 .collection-item form {
   margin-top: -5px;
 }
+
+.vt323-regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-image: url('/home/molly/code/project-2-stardew-tracker/public/images/Stardew-Background.png');
+  /* Optionally, you can set other background properties */
+  background-size: cover; /* Adjusts the size of the background image to cover the entire viewport */
+  background-position: center; /* Centers the background image */
+  /* Add any other background properties as needed */
+}
