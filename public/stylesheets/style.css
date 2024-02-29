@@ -1,10 +1,22 @@
+nav {
+  position: fixed; /* Fix the position of the navigation bar */
+  top: 0; /* Position it at the top of the viewport */
+  width: 100%; /* Make it span the entire width */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* main {
+  padding-top: 100px;
+} */
+
 body {
   margin: 0;
   padding: 0;
   padding-top: 70px;
   background-image: url('https://raw.githubusercontent.com/redhedredemption/-project-2-stardew-tracker/main/public/images/Stardew-Background.png');
-  background-size: cover, auto; 
-  background-position: center; 
+  background-size: 100% auto;
+  /* background-repeat: no-repeat; */
+  background-position: center top 70px; 
 }
 
 .brand-logo {

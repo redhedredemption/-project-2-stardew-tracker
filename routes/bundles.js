@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const bundleCtrl = require('../controllers/bundle')
+const bundleCtrl = require('../controllers/bundles')
 const isLoggedIn = require('../config/auth')
 
 

@@ -36,7 +36,7 @@ passport.serializeUser(function(user, cb) {
 
 passport.deserializeUser(async function(id, cb) {
   try{
-    const userDoc = await UserModel.findById(userId)
+    const userDoc = await UserModel.findById(id)
     cb(null, userDoc); // this line attaches the userDoc to req.user
     // req.user = userDoc
   } catch(err) {

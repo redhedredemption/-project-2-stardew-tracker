@@ -55,11 +55,11 @@ app.use(function (req, res, next) {
 
 // Stardew Routers
 app.use("/", indexRouter);
-// app.use("/bundles", bundlesRouter);
+app.use("/bundles", bundlesRouter);
 
 //Stardew Comment Routers
-// app.use("/", commentsRouter);
-// app.use("/", itemsRouter);
+app.use("/", commentsRouter);
+app.use("/", itemsRouter);
 
 // mount all routes with appropriate base paths
 app.use(function(req, res, next) {

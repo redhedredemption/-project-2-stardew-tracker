@@ -1,4 +1,4 @@
-const BundleModel = require('../models/Bundle')
+const BundleModel = require('../models/bundle')
 
 module.exports = {
   create,

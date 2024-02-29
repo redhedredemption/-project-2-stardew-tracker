@@ -1,13 +1,6 @@
 const BundleModel = require('../models/bundle')
 const ItemModel = require('../models/item');
 
-module.exports = {
-  add: addBundle,
-  create,
-  index,
-  show,
-}
-
 
 
 // SHOW FUNCTION
@@ -58,6 +51,15 @@ async function create(req, res) {
 }
 
 // NEW FUNCTION
-function addbundle(req, res) {
+function addBundle(req, res) {
   res.render('bundles/add')
 }
+
+module.exports = {
+    add: addBundle,
+    create,
+    index,
+    show,
+  }
+  
+  
