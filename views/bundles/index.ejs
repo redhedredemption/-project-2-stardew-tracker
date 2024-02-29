@@ -1,0 +1,27 @@
+<%- include('./partials/header') %>
+<table id="list">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Collected?</th>
+    <th>Deposited?</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% bundleDocs.forEach(function(r) { %>
+      <tr>
+        <td><%= r.name %></td>
+        <td><%= r.collected %></td>
+        <td><%= r.deposited %></td>
+        <td>
+        <% if (user) { %>
+          <a href="/bundles/<%= r._id %>">DETAILS</a>
+          <% } %>
+        </td>
+    </tr>
+    <% }); %>
+    </tbody>
+  </table>
+
+<%- include('./partials/footer') %>

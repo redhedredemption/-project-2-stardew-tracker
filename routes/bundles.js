@@ -5,7 +5,7 @@ const isLoggedIn = require('../config/auth')
 
 
 router.get('/', bundleCtrl.index)
-router.get('/new', bundleCtrl.new)
+router.get('/add', bundleCtrl.add)
 
 router.get('/:id', bundleCtrl.show)
 router.post('/', bundleCtrl.create)

@@ -1,0 +1,101 @@
+<%- include('./partials/header') %>
+<section id="show-page">
+
+  <div>Bundle: <%= bundle.name %></div>
+
+
+  <div>Items: </div>
+  <ul>
+    <% bundle.list.forEach(i => { %>
+     <li>
+      <%= i.name %>
+     </li>
+    <% }) %>
+  </ul>
+</section>
+
+<br><br>
+
+
+<form action="/bundles/<%= bundle._id %>/items" method="POST">
+  <select name="itemId" id="add-per-to-list">
+    <% items.forEach(i => { %>
+    <option value="<%= i._id %>">
+      <%= i.name %> <%= i.number %> <%= i.unit %>
+    </option>
+    <% }) %>
+  </select>
+
+
+  <button type="submit">ADD TO LIST</button>
+
+</form>
+<br><br>
+
+<h2>Comments</h2>
+
+<% if (user) { %>
+ <form action="/bundles/<%= bundle._id %>/comments" id="add-comment-form" method="POST">
+  <label>Comment:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Comment"></form>
+<% } %>
+
+<% if (bundle.comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% bundle.comments.forEach(function(c) { %>
+        <tr>
+          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>"
+              referrerpolicy="no-referrer">
+            <%= c.userName %>
+          </td>
+          <td>
+            <%= c.createdAt.toLocaleDateString() %>
+          </td>
+          <td>
+              <%= c.content %>
+          </td>
+          <td>
+            <%= c.rating %>
+        </td>
+          <td>
+            <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
+              <!-- Value attribute is being set to the comment's current text -->
+              <input name="content" value="<%= c.content %>">
+              <button type="submit">UPDATE COMMENT</button>
+            </form>
+          </td>
+          <td>
+        <td>
+          <% if (user && user._id.equals(c.user)) { %>
+            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+              <button type="submit">DELETE</button>
+            </form>
+            <% } %>
+        </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h5>No Reviews Yet</h5>
+      <% } %>
+
+<%- include('./partials/footer') %>

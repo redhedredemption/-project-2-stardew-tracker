@@ -2,7 +2,7 @@ const ItemModel = require("../models/item");
 const BundleModel = require('../models/bundle')
 
 module.exports = {
-  new: newItem,
+  add: addItem,
   create,
   addToList,
   delete: deleteOne
@@ -41,17 +41,17 @@ async function create(req, res) {
   try{
     const createdItem = await ItemModel.create(req.body);
     console.log(createdItem, "<-- created Item")
-    res.redirect('/items/new')
+    res.redirect('/items/add')
   } catch(err) {
     res.send(err)
   }
 }
 
 // NEW FUNCTION
-async function newItem(req, res) {
+async function addItem(req, res) {
   try{
     const allItems = await ItemModel.find({});
-    res.render('items/new', {
+    res.render('items/add', {
       title: 'Add Item',
       items: allItems,
     });

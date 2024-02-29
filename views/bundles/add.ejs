@@ -1,0 +1,31 @@
+<%- include('./partials/header') %>
+
+    <h2>Add a Bundle</h2>
+    <form action="/bundles" method="POST">
+        <label>Title:
+            <input type="text" name="title" required>
+        </label><br>
+        <label>Cuisine:
+            <input type="text" name="cuisine" required>
+        </label><br>
+        <label>Bundle Name</label>
+        <select name="bundle">
+            <option value="Boiler Room - Adventurer">Boiler Room - Adventurer</option>
+            <option value="Boiler Room - Blacksmith">Boiler Room - Blacksmith</option>
+            <option value="Boiler Room - Geologist">Boiler Room - Geologist</option>
+            <option value="Bulletin Board - Chef">Bulletin Board - Chef</option>
+            <option value="Bulletin Board - Dye">Bulletin Board - Dye</option>
+            <option value="Bulletin Board - Enchanter">Bulletin Board - Enchanter</option>
+            <option value="Bulletin Board - Field Research">Bulletin Board - Field Research</option>
+            <option value="Bulletin Board - Fodder">Bulletin Board - Fodder</option>
+        </select>
+        </label><br>
+
+        <button type="submit">ADD BUNDLE</button>
+    </form>
+
+    <%- include('./partials/footer') %>
+
+
+
+        <!-- '<Crafts Room - Construction>', '<Crafts Room - Exotic Foraging>', '<Crafts Room - Fall Foraging>', '<Crafts Room - Spring Foraging>', '<Crafts Room - Summer Foraging>', '<Crafts Room - Winter Foraging>', '<Crafts Room - Winter Foraging>', '<Fish Tank - Lake Fish>', '<Fish Tank - Night Fishing>', 'Fish Tank - Ocean Fish', '<Fish Tank - River Fish>', '<Fish Tank - Specialty Fish>', '<Fish Tank - Crab Pot>', '<Pantry - Animal>', '<Pantry - Artisan>', '<Pantry - Fall Crops>', '<Pantry - Quality Crops>', '<Pantry - Spring Crops>', '<Pantry - Summer Crops>', '<Vault - 2,500g>', '<Vault - 5,000g>', '<Vault - 10,000g>', '<Vault - 25,000g>' -->

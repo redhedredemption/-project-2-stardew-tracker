@@ -2,7 +2,7 @@ const BundleModel = require('../models/bundle')
 const ItemModel = require('../models/item');
 
 module.exports = {
-  new: newBundle,
+  add: addBundle,
   create,
   index,
   show,
@@ -53,11 +53,11 @@ async function create(req, res) {
     
     res.redirect(`/bundles/${bundleFromTheDatabase._id}`);
   } catch(err) {
-    res.render("bundles/new", { errorMsg: err.message });
+    res.render("bundles/add", { errorMsg: err.message });
   }
 }
 
 // NEW FUNCTION
-function newbundle(req, res) {
-  res.render('bundles/new')
+function addbundle(req, res) {
+  res.render('bundles/add')
 }

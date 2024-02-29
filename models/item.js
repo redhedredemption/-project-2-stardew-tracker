@@ -21,6 +21,7 @@ const itemSchema = new Schema({
     //   <option value="Exotic Foraging">exoticForaging</option>
     //   <option value="Fall Foraging">Fall Foraging</option>
     //   <option value="Fall Foraging">Fall Foraging</option> -->
+    // NEED TO LINK/REFERENCE BUNDLES
   }
 }, {
   timestamps: true
