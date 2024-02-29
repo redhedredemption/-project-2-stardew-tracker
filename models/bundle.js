@@ -30,11 +30,9 @@ const commentSchema = new Schema({
 // Enforces the shape of the documents (Think of objects)
 // in our mongodb movies collection
 const bundleSchema = new Schema({
-  title: String,
-  <FILL>: String,
-  <FILL>: {
+  bundle: {
     type: String,
-    enum: ['<FILL>', '<FILL>', '<FILL>', '<FILL>', '<FILL>', '<FILL>']
+    enum: ['<Boiler Room - Adventurer>', '<Boiler Room - Blacksmith>', '<Boiler Room - Geologist>', '<Bulletin Board - Chef>', '<Bulletin Board - Dye>', '<Bulletin Board - Enchanter>', '<Bulletin Board - Field Research>', '<Bulletin Board - Fodder>', '<Crafts Room - Construction>', '<Crafts Room - Exotic Foraging>', '<Crafts Room - Fall Foraging>', '<Crafts Room - Spring Foraging>', '<Crafts Room - Summer Foraging>', '<Crafts Room - Winter Foraging>', '<Crafts Room - Winter Foraging>', '<Fish Tank - Lake Fish>', '<Fish Tank - Night Fishing>', 'Fish Tank - Ocean Fish', '<Fish Tank - River Fish>', '<Fish Tank - Specialty Fish>', '<Fish Tank - Crab Pot>', '<Pantry - Animal>', '<Pantry - Artisan>', '<Pantry - Fall Crops>', '<Pantry - Quality Crops>', '<Pantry - Spring Crops>', '<Pantry - Summer Crops>', '<Vault - 2,500g>', '<Vault - 5,000g>', '<Vault - 10,000g>', '<Vault - 25,000g>']
   },
 
   // Many to Many Relationship
